@@ -1,0 +1,132 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    padding: 2rem;
+    text-align: center;
+}
+
+.contentCard {
+    background: var(--surface-color);
+    padding: 4rem 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.statusText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--brand-primary);
+    margin-bottom: 2rem;
+    height: 2rem;
+}
+
+/* Spinner Animation */
+.spinnerBox {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(37, 99, 235, 0.1);
+    border-top-color: var(--brand-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinnerLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--brand-primary);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Progress bar */
+.progressContainer {
+    width: 100%;
+    background-color: var(--border-color);
+    height: 8px;
+    border-radius: var(--radius-full);
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand-accent), #60a5fa);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: var(--radius-full);
+}
+
+/* Checklist of actions happening */
+.actionsList {
+    list-style: none;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.actionItem {
+    padding: 0.5rem 0;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.actionItem.active {
+    color: var(--brand-primary);
+    font-weight: 500;
+}
+
+.actionItem.done {
+    color: #10b981;
+    /* Success Green */
+}
+
+/* Download State */
+.downloadState {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.successIcon {
+    color: #10b981;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.downloadTitle {
+    font-size: 2rem;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+}
+
+.downloadText {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
