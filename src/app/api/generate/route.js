@@ -28,25 +28,13 @@ export async function POST(req) {
       4. A bespoke Prompt Kit (You MUST provide at least 30 detailed, ready-to-use prompts spanning operations, marketing, and sales).
     `;
 
-        // 2. Call OpenAI (Commented out for demo without live keys to avoid crashes)
-        /*
+        // 2. Call OpenAI
         const completion = await openai.chat.completions.create({
-          messages: [{ role: "user", content: prompt }],
-          model: "gpt-4-turbo-preview",
-          temperature: 0.7,
+            messages: [{ role: "user", content: prompt }],
+            model: "gpt-4-turbo-preview",
+            temperature: 0.7,
         });
         const strategyContent = completion.choices[0].message.content;
-        */
-
-        // Mocked LLM response for demonstration
-        const strategyContent = `
-      EXECUTIVE SUMMARY
-      To resolve the bottlenecks at ${businessName}, we have identified three core automation pathways...
-      
-      RECOMMENDED TOOLS
-      1. Zapier - To connect ${techStack[0] || 'your CRM'} with Slack.
-      2. ChatGPT Team - For the custom prompt kit.
-    `;
 
         // 3. Generate the PDF
         // We create a new Promise to handle the stream output of PDFKit into a standard response
