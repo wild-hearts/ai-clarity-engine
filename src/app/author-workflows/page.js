@@ -157,11 +157,11 @@ export default function AuthorWorkflows() {
     const [openFaq, setOpenFaq] = useState(null);
 
     return (
-        <main>
+        <main style={{ background: '#0d0b09' }}>
             {/* ===== HERO ===== */}
             <section className={styles.hero}>
-                <div className={styles.blob1} />
-                <div className={styles.blob2} />
+                <div className={styles.heroBg} />
+                <div className={styles.heroOverlay} />
 
                 <div className={`${styles.heroContent} animate-fade-in`}>
                     <div className={styles.heroEyebrow}>Wild Hearts Publishing</div>
@@ -366,17 +366,19 @@ export default function AuthorWorkflows() {
 
             {/* ===== FINAL CTA ===== */}
             <section className={styles.calloutSection}>
-                <div className={styles.sectionInner}>
-                    <h2 className={styles.calloutTitle}>Ready to stop guessing your next step?</h2>
-                    <p className={styles.calloutBody}>
-                        Choose the workflow that matches where you are today, and let Wild Hearts guide you from first draft to a finished, published, and marketed book.
-                    </p>
-                    <button
-                        className={styles.calloutBtn}
-                        onClick={() => scrollTo('workflow-grid')}
-                    >
-                        Choose your workflow
-                    </button>
+                <div className={styles.calloutInner}>
+                    <div className={styles.sectionInner}>
+                        <h2 className={styles.calloutTitle}>Ready to stop guessing your next step?</h2>
+                        <p className={styles.calloutBody}>
+                            Choose the workflow that matches where you are today, and let Wild Hearts guide you from first draft to a finished, published, and marketed book.
+                        </p>
+                        <button
+                            className={styles.calloutBtn}
+                            onClick={() => scrollTo('workflow-grid')}
+                        >
+                            Choose your workflow
+                        </button>
+                    </div>
                 </div>
             </section>
 
