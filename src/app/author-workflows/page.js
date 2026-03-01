@@ -36,7 +36,7 @@ const WORKFLOWS = [
         badge: 'Polish your draft',
         title: 'Editing Workflow',
         subtitle: 'Turn your messy draft into a professional-grade manuscript.',
-        route: null,
+        route: 'https://www.wildheartspublishing.com.au',
         perfectFor: [
             'Your draft is done but you do not know what to fix first.',
             'You want a clear order for structural, line, copy, and proof edits.',
@@ -50,7 +50,7 @@ const WORKFLOWS = [
             'Final "ready to publish" checklist for peace of mind.',
         ],
         format: 'PDF workflow guide + editable checklists and pass trackers.',
-        buttonLabel: 'Coming soon',
+        buttonLabel: 'View Editing Workflow →',
     },
     {
         id: 'workflow-selfpublishing',
@@ -295,7 +295,7 @@ export default function AuthorWorkflows() {
 
                                 <p className={styles.cardFormat}>{wf.format}</p>
                                 {wf.route ? (
-                                    <Link href={wf.route} className={styles.cardCta}>{wf.buttonLabel}</Link>
+                                    <Link href={wf.route} className={styles.cardCta} target={wf.route.startsWith('http') ? '_blank' : undefined} rel={wf.route.startsWith('http') ? 'noopener noreferrer' : undefined}>{wf.buttonLabel}</Link>
                                 ) : (
                                     <button className={styles.cardCta} disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>{wf.buttonLabel}</button>
                                 )}
