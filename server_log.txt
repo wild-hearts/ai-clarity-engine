@@ -1,0 +1,25 @@
+
+> authors-ai-toolkit@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.118.0.116:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 317ms
+ GET /delivery?category=Fiction&bookTitle=The+Momentum+rule&genre=anti+guru+self+help+&writingStage=Ready+to+Publish&blurb=anyone+18+plus+&struggle=Marketing+&protagonist=stuck+people+&theme=Do+it+scared...keep+moving+no+matter+how+small+ 200 in 196ms (compile: 136ms, render: 60ms)
+ POST /api/generate 200 in 15.1s (compile: 171ms, render: 15.0s)
+ POST /api/generate 200 in 13.8s (compile: 1140µs, render: 13.8s)
+ GET /delivery 200 in 50ms (compile: 16ms, render: 34ms)
+ POST /api/generate 200 in 17.8s (compile: 4ms, render: 17.7s)
+ GET /delivery?category=Non-Fiction+%2F+Self-Help&bookTitle=The+Momentum+Rule&genre=Anti+Guru+Self+Help&writingStage=Ready+to+Publish&blurb=Everyone+18+Plus+&struggle=Marketing+&readerProblem=Stuck+people+&framework=Momentum+rule+and+non+zero+days+ 200 in 39ms (compile: 13ms, render: 26ms)
+ POST /api/generate 200 in 12.6s (compile: 7ms, render: 12.6s)
+ GET /delivery?category=Non-Fiction+%2F+Self-Help&bookTitle=The+Momentum+Rule&genre=Anti+Guru+self+help&writingStage=Ready+to+Publish&blurb=anyone+&struggle=Marketing+&readerProblem=stuck+people+&framework=Momentum+rule+and+non+zero+days+ 200 in 25ms (compile: 4ms, render: 21ms)
+ POST /api/generate 200 in 14.8s (compile: 5ms, render: 14.8s)
+ GET / 200 in 207ms (compile: 147ms, render: 60ms)
+ GET / 200 in 21ms (compile: 1703µs, render: 20ms)
+ GET /apple-touch-icon-precomposed.png 404 in 99ms (compile: 69ms, render: 30ms)
+ GET /apple-touch-icon.png 404 in 96ms (compile: 71ms, render: 24ms)
+ GET / 200 in 36ms (compile: 4ms, render: 32ms)

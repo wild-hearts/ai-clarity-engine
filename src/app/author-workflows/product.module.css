@@ -1,0 +1,471 @@
+/* ===================================================
+   Shared product page styles — dark academia theme
+   Used by ai-toolkit, self-publishing-flow, marketing-flow-kit
+   =================================================== */
+
+/* ── Layout ── */
+.page {
+    background: #0d0b09;
+    min-height: 100vh;
+}
+
+.inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.innerWide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ── Hero ── */
+.hero {
+    position: relative;
+    padding: 7rem 1.5rem 6rem;
+    text-align: center;
+    overflow: hidden;
+    background: #0d0b09;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: brightness(0.65) saturate(0.7);
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 10%, rgba(13, 11, 9, 0.75) 65%, rgba(13, 11, 9, 0.97) 100%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: rgba(201, 160, 80, 0.12);
+    color: #c9a050;
+    border: 1px solid rgba(201, 160, 80, 0.3);
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.heroTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    color: #f5f0e8;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.heroSubtitle {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: rgba(245, 240, 232, 0.65);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+}
+
+.heroMeta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.heroMetaItem {
+    font-size: 0.82rem;
+    color: rgba(245, 240, 232, 0.5);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.heroMetaItem::before {
+    content: '✓';
+    color: #2d8b5e;
+    font-weight: 700;
+}
+
+/* ── Sections ── */
+.section {
+    padding: 5rem 1.5rem;
+    background: #0d0b09;
+}
+
+.sectionAlt {
+    padding: 5rem 1.5rem;
+    background: #100e0b;
+}
+
+.sectionTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    color: #f5f0e8;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.sectionBody {
+    text-align: center;
+    color: rgba(245, 240, 232, 0.6);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+}
+
+/* ── What's inside grid ── */
+.insideGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.insideCard {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.insideCard:hover {
+    border-color: rgba(201, 160, 80, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.insideCheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(45, 139, 94, 0.2);
+    border: 1px solid rgba(45, 139, 94, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    color: #2d8b5e;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.insideText {
+    font-size: 0.9rem;
+    color: rgba(245, 240, 232, 0.75);
+    line-height: 1.5;
+}
+
+/* ── Who it's for ── */
+.forGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.forCard {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.forCardAlt {
+    border-color: rgba(201, 160, 80, 0.15);
+}
+
+.forCardTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #f5f0e8;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.forList {
+    list-style: none;
+    padding: 0;
+}
+
+.forList li {
+    font-size: 0.88rem;
+    color: rgba(245, 240, 232, 0.65);
+    padding: 0.45rem 0 0.45rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    line-height: 1.5;
+}
+
+.forList li:last-child {
+    border-bottom: none;
+}
+
+.forCard .forList li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2d8b5e;
+    font-weight: 700;
+}
+
+.forCardAlt .forList li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: rgba(201, 160, 80, 0.6);
+}
+
+/* ── Pricing / Buy box ── */
+.buySection {
+    padding: 6rem 1.5rem;
+    background: #0d0b09;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.buySection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201, 160, 80, 0.05), transparent 60%);
+}
+
+.buyCard {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 160, 80, 0.3);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.buyFormat {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #c9a050;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.buyTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: #f5f0e8;
+    margin-bottom: 0.5rem;
+}
+
+.buyDesc {
+    font-size: 0.9rem;
+    color: rgba(245, 240, 232, 0.55);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.buyIncludes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 1.25rem 0;
+    text-align: left;
+}
+
+.buyIncludes li {
+    font-size: 0.88rem;
+    color: rgba(245, 240, 232, 0.7);
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+}
+
+.buyIncludes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2d8b5e;
+    font-weight: 700;
+}
+
+.buyPrice {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #f5f0e8;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.buyPriceSub {
+    font-size: 0.82rem;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.buyBtn {
+    width: 100%;
+    padding: 1.1rem;
+    background: #c9a050;
+    color: #0d0b09;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(201, 160, 80, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.buyBtn:hover:not(:disabled) {
+    background: #b58d42;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(201, 160, 80, 0.4);
+}
+
+.buyBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.buyGuarantee {
+    font-size: 0.78rem;
+    color: rgba(245, 240, 232, 0.35);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* ── FAQ ── */
+.faqList {
+    max-width: 680px;
+    margin: 2.5rem auto 0;
+}
+
+.faqItem {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.faqItem:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.15rem 0;
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: #f5f0e8;
+    gap: 1rem;
+    user-select: none;
+}
+
+.faqToggle {
+    font-size: 1.3rem;
+    color: #c9a050;
+    font-weight: 300;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+}
+
+.faqOpen .faqQuestion {
+    color: #c9a050;
+}
+
+.faqAnswer {
+    padding: 0 0 1.15rem;
+    font-size: 0.9rem;
+    color: rgba(245, 240, 232, 0.6);
+    line-height: 1.7;
+}
+
+/* ── Back link ── */
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: rgba(245, 240, 232, 0.4);
+    text-decoration: none;
+    padding: 1.25rem 1.5rem;
+    transition: color 0.2s ease;
+    position: relative;
+    z-index: 10;
+    font-family: 'Inter', sans-serif;
+}
+
+.backLink:hover {
+    color: #c9a050;
+}
+
+/* ── Footer ── */
+.footer {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    background: #0d0b09;
+}
+
+.footerText {
+    font-size: 0.82rem;
+    color: rgba(245, 240, 232, 0.3);
+}
+
+.footerLink {
+    color: #c9a050;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 1rem 4rem;
+    }
+
+    .insideGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .forGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .buyCard {
+        padding: 2rem 1.5rem;
+    }
+}

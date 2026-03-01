@@ -1,0 +1,182 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(15, 23, 42, 0.03), transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+.heroContent {
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--brand-secondary);
+    color: var(--brand-accent);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.titleHighlight {
+    background: linear-gradient(135deg, var(--brand-accent), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.priceCard {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.priceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.currency {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.deliverablesList {
+    text-align: left;
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.deliverablesList li {
+    padding: 0.75rem 0;
+    color: var(--brand-primary);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.deliverablesList li:last-child {
+    border-bottom: none;
+}
+
+.checkIcon {
+    color: var(--brand-accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.ctaButton {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1.125rem;
+}
+
+/* Background aesthetic blobs */
+.blob1,
+.blob2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
+}
+
+.blob1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(45, 139, 94, 0.15);
+    /* Forest Green */
+    top: -100px;
+    left: -100px;
+}
+
+.blob2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(201, 160, 80, 0.15);
+    /* Gold */
+    bottom: 10%;
+    right: -50px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .priceCard {
+        padding: 2rem 1.5rem;
+    }
+}

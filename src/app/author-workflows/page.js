@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from './workflows.module.css';
 
 // Strip citation markers like [web:19] from content strings
@@ -14,6 +15,7 @@ const WORKFLOWS = [
         badge: 'Start here',
         title: 'Author AI Toolkit',
         subtitle: 'Use AI like a pro at every stage of your draft.',
+        route: '/author-workflows/ai-toolkit',
         perfectFor: [
             'You want to brainstorm and draft faster without losing your voice.',
             'You feel overwhelmed by random AI hacks and want a curated toolkit.',
@@ -27,13 +29,14 @@ const WORKFLOWS = [
             'Quick-start path for your first 60 minutes with the toolkit.',
         ],
         format: 'Instant digital download (PDF guide + copy-paste prompt sheets).',
-        buttonLabel: 'View Author AI Toolkit',
+        buttonLabel: 'View Author AI Toolkit →',
     },
     {
         id: 'workflow-editing',
         badge: 'Polish your draft',
         title: 'Editing Workflow',
         subtitle: 'Turn your messy draft into a professional-grade manuscript.',
+        route: null,
         perfectFor: [
             'Your draft is done but you do not know what to fix first.',
             'You want a clear order for structural, line, copy, and proof edits.',
@@ -47,13 +50,14 @@ const WORKFLOWS = [
             'Final "ready to publish" checklist for peace of mind.',
         ],
         format: 'PDF workflow guide + editable checklists and pass trackers.',
-        buttonLabel: 'View Editing Workflow',
+        buttonLabel: 'Coming soon',
     },
     {
         id: 'workflow-selfpublishing',
         badge: 'Production',
         title: 'Self-Publishing Flow',
         subtitle: 'From polished manuscript to live book on major retailers.',
+        route: '/author-workflows/self-publishing-flow',
         perfectFor: [
             'Your manuscript is almost or fully edited and you are ready to publish.',
             'You want to avoid technical mistakes with ISBNs, files, and platforms.',
@@ -68,13 +72,14 @@ const WORKFLOWS = [
             'Launch settings checklist so pricing, territories, and links are aligned.',
         ],
         format: 'PDF guide + editable planners, checklists, and matrices.',
-        buttonLabel: 'Get Self-Publishing Flow',
+        buttonLabel: 'View Self-Publishing Flow →',
     },
     {
         id: 'workflow-marketing',
         badge: 'Launch & beyond',
         title: 'Marketing Flow Kit',
         subtitle: 'A complete marketing plan from pre-launch warm-up to long-tail sales.',
+        route: '/author-workflows/marketing-flow-kit',
         perfectFor: [
             'You dread marketing and never know what to do next.',
             'You want a realistic plan that fits around work, family, and writing.',
@@ -89,7 +94,7 @@ const WORKFLOWS = [
             'Launch week calendar with day-by-day tasks and post-launch follow-up.',
         ],
         format: 'Main PDF playbook + editable spreadsheets and script documents.',
-        buttonLabel: 'Get Marketing Flow Kit',
+        buttonLabel: 'View Marketing Flow Kit →',
     },
 ];
 
@@ -248,7 +253,11 @@ export default function AuthorWorkflows() {
                                 </div>
 
                                 <p className={styles.cardFormat}>{wf.format}</p>
-                                <button className={styles.cardCta}>{wf.buttonLabel}</button>
+                                {wf.route ? (
+                                    <Link href={wf.route} className={styles.cardCta}>{wf.buttonLabel}</Link>
+                                ) : (
+                                    <button className={styles.cardCta} disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>{wf.buttonLabel}</button>
+                                )}
                             </div>
                         ))}
                     </div>

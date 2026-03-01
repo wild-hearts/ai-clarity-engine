@@ -130,38 +130,3 @@
         transform: rotate(360deg);
     }
 }
-
-/* Upsell box for universal tier */
-.upsellBox {
-    margin-top: 2.5rem;
-    padding: 1.75rem;
-    background: #f8f7f4;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    text-align: left;
-}
-
-.upsellTitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--brand-primary);
-    margin-bottom: 0.5rem;
-}
-
-.upsellText {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-}
-
-.upsellLink {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--brand-accent);
-    text-decoration: none;
-}
-
-.upsellLink:hover {
-    text-decoration: underline;
-}
