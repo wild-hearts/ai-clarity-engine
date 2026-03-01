@@ -118,6 +118,117 @@ function MarketingKitDelivery() {
     );
 }
 
+function FullJourneyDelivery() {
+    const downloads = [
+        {
+            title: 'Author AI Toolkit',
+            action: 'Open this first to master your drafting engine.',
+            file: '/Authors_AI_Toolkit_Prompt_Vault.pdf',
+            label: 'Download Author AI Toolkit',
+        },
+        {
+            title: 'Editing Workflow',
+            action: 'The 4-dimension logic for your second draft.',
+            file: '/Authors_AI_Toolkit_Prompt_Vault.pdf', // replace with Editing_Workflow.pdf when ready
+            label: 'Download Editing Workflow',
+        },
+        {
+            title: 'Self-Publishing Flow',
+            action: 'Your technical roadmap to global distribution.',
+            file: '/Self_Publishing_Flow.pdf',
+            label: 'Download Self-Publishing Flow',
+        },
+        {
+            title: 'Marketing & AEO Kit',
+            action: 'The blueprint for AI and human discovery.',
+            file: '/Marketing_Flow_Kit.pdf',
+            label: 'Download Marketing & AEO Kit',
+        },
+    ];
+
+    return (
+        <div>
+            {/* ── Celebration hero ── */}
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                <svg style={{ width: 56, height: 56, color: '#c9a050', marginBottom: '1rem' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h1 className={styles.downloadTitle} style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', marginBottom: '0.75rem' }}>
+                    Welcome to the Collective!
+                </h1>
+                <p style={{ color: 'rgba(245,240,232,0.65)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '0.5rem' }}>
+                    Your journey from manuscript to market officially starts now.
+                </p>
+                <p style={{ color: 'rgba(245,240,232,0.5)', fontSize: '0.92rem', lineHeight: 1.6 }}>
+                    You&apos;ve stopped guessing and started building. Your workflows are ready for download below.
+                </p>
+            </div>
+
+            {/* ── Download vault ── */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '2.5rem' }}>
+                {downloads.map((d, i) => (
+                    <div key={i} style={{
+                        background: 'rgba(255,255,255,0.04)',
+                        border: '1px solid rgba(201,160,80,0.2)',
+                        borderRadius: 12,
+                        padding: '1.5rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.75rem',
+                    }}>
+                        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.05rem', color: '#f5f0e8', fontWeight: 700 }}>
+                            {d.title}
+                        </div>
+                        <p style={{ fontSize: '0.82rem', color: 'rgba(245,240,232,0.5)', lineHeight: 1.5, fontStyle: 'italic', margin: 0 }}>
+                            {d.action}
+                        </p>
+                        <a
+                            href={d.file}
+                            download
+                            className="btn-primary"
+                            style={{ padding: '0.75rem 1rem', textAlign: 'center', display: 'block', fontSize: '0.85rem', marginTop: 'auto' }}
+                        >
+                            {d.label}
+                        </a>
+                    </div>
+                ))}
+            </div>
+
+            {/* ── First 5-minute task ── */}
+            <div style={{
+                background: 'rgba(201,160,80,0.07)',
+                border: '1px solid rgba(201,160,80,0.25)',
+                borderRadius: 12,
+                padding: '1.75rem',
+                marginBottom: '2rem',
+            }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#c9a050', marginBottom: '0.75rem', fontFamily: 'Inter, sans-serif' }}>
+                    Your First 5-Minute Task
+                </div>
+                <p style={{ color: 'rgba(245,240,232,0.75)', fontSize: '0.92rem', lineHeight: 1.7, margin: 0, fontStyle: 'italic' }}>
+                    &quot;Don&apos;t wait until you&apos;re finished to start your AEO (Answer Engine Optimization). Open the Marketing Kit now and flip to the &apos;Entity Setup&apos; page. Completing this one 5-minute task today ensures AI engines like Gemini and ChatGPT start recognizing you as an author before you even hit &apos;Publish&apos;.&quot;
+                </p>
+            </div>
+
+            {/* ── Momentum closer ── */}
+            <div style={{
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 12,
+                padding: '1.75rem',
+                textAlign: 'center',
+            }}>
+                <p style={{ color: 'rgba(245,240,232,0.65)', fontSize: '0.92rem', lineHeight: 1.75, margin: 0, fontStyle: 'italic' }}>
+                    &quot;You wrote the book. We&apos;re here to make sure it&apos;s heard. If you have any questions while moving through the flows, reach out at{' '}
+                    <a href="mailto:publishing@wildheartshq.com" style={{ color: '#c9a050' }}>publishing@wildheartshq.com</a>
+                    &nbsp;— a real human (and a fellow author) is on the other side.&quot;
+                </p>
+            </div>
+        </div>
+    );
+}
+
 
 function PersonalisedDelivery({ searchParams }) {
     const [currentStep, setCurrentStep] = useState(0);
@@ -263,6 +374,7 @@ function DeliveryContent() {
     if (tier === 'ai-toolkit') return <AIToolkitDelivery />;
     if (tier === 'self-publishing') return <SelfPublishingDelivery />;
     if (tier === 'marketing-kit') return <MarketingKitDelivery />;
+    if (tier === 'full-journey') return <FullJourneyDelivery />;
 
     return <PersonalisedDelivery searchParams={searchParams} />;
 }

@@ -10,6 +10,7 @@ const WHATS_INSIDE = [
     'Email sequences for welcome, launch, and review requests you can customise.',
     'Social media content pillars, 30+ post prompts, and a weekly content planner.',
     'Launch week calendar with day-by-day tasks and post-launch follow-up.',
+    '2026 Answer Engine Optimization (AEO) Setup: Stop competing for keywords — start becoming the Answer. Structure your presence so AI agents recommend your book.',
 ];
 
 const FOR_YOU = [
@@ -144,10 +145,10 @@ export default function MarketingFlowPage() {
                         <ul className={styles.buyIncludes}>
                             {WHATS_INSIDE.map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
-                        <div className={styles.buyPrice}>$39 <span style={{ fontSize: '1rem', fontFamily: 'Inter', fontWeight: 400, color: 'rgba(245,240,232,0.4)' }}>AUD</span></div>
+                        <div className={styles.buyPrice}>$97 <span style={{ fontSize: '1rem', fontFamily: 'Inter', fontWeight: 400, color: 'rgba(245,240,232,0.4)' }}>AUD</span></div>
                         <p className={styles.buyPriceSub}>One-time payment · No subscription</p>
                         <button className={styles.buyBtn} onClick={handleBuy} disabled={loading}>
-                            {loading ? 'Redirecting to checkout…' : 'Buy now — $39 AUD'}
+                            {loading ? 'Redirecting to checkout…' : 'Buy now — $97 AUD'}
                         </button>
                         <p className={styles.buyGuarantee}>Secure checkout via Stripe · Instant download after payment</p>
                     </div>

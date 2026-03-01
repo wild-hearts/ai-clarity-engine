@@ -22,20 +22,26 @@ const TIERS = {
   'ai-toolkit': {
     name: "Author AI Toolkit",
     description: 'Planning, drafting, and revision prompts plus ethical guardrails and a 60-minute quick-start path. PDF guide + copy-paste prompt sheets.',
-    amount: 3900, // $39.00 AUD — set your price here
+    amount: 4700, // $47.00 AUD
     successPath: '/delivery?tier=ai-toolkit',
   },
   'self-publishing': {
     name: "Self-Publishing Flow",
     description: 'End-to-end self-publishing checklist, budget planner, platform matrix, metadata workbook, and file upload checklists.',
-    amount: 3900, // $39.00 AUD — set your price here
+    amount: 9700, // $97.00 AUD
     successPath: '/delivery?tier=self-publishing',
   },
   'marketing-kit': {
     name: "Marketing Flow Kit",
-    description: 'Six-month timeline, ARC system, email sequences, social content pillars, launch calendar, and post-launch follow-up.',
-    amount: 3900, // $39.00 AUD — set your price here
+    description: 'Six-month timeline, ARC system, email sequences, social content pillars, launch calendar, and the 2026 AEO Blueprint.',
+    amount: 9700, // $97.00 AUD
     successPath: '/delivery?tier=marketing-kit',
+  },
+  'full-journey': {
+    name: "The Full Author Journey Bundle",
+    description: 'All four workflow kits — AI Toolkit, Editing Flow, Self-Publishing Flow, and Marketing & AEO Kit — plus lifetime access to all future workflow updates.',
+    amount: 19700, // $197.00 AUD
+    successPath: '/delivery?tier=full-journey',
   },
 };
 

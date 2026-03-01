@@ -100,36 +100,61 @@ const WORKFLOWS = [
 
 const BUNDLES = [
     {
-        id: 'bundle-editing-essentials',
-        badge: 'Draft + edit',
-        name: 'Editing Essentials',
-        description: 'Everything you need to move from rough draft to polished manuscript.',
-        includes: ['Author AI Toolkit', 'Editing Workflow'],
-        price: 'Set bundle price',
-        buttonLabel: 'Get Editing Essentials',
+        id: 'bundle-ai-toolkit',
+        badge: 'Start here',
+        name: 'Author AI Toolkit',
+        tagline: '"Finish your draft without losing your soul."',
+        description: 'Ethical prompt engineering for faster drafting — with guardrails that keep your voice yours.',
+        includes: [
+            'Planning & drafting prompt library',
+            'Revision workflow for tightening prose',
+            'Voice-preservation techniques',
+            'Copy-paste prompt sheets for Claude & ChatGPT',
+            '60-minute quick-start path',
+        ],
+        price: '$47',
+        stripe: 'ai-toolkit',
+        buttonLabel: 'Get the Author AI Toolkit',
         featured: false,
     },
     {
-        id: 'bundle-publishing-essentials',
-        badge: 'Publish + launch',
-        name: 'Publishing Essentials',
-        description: 'Turn your finished manuscript into a published and promoted book.',
-        includes: ['Self-Publishing Flow', 'Marketing Flow Kit'],
-        price: 'Set bundle price',
-        buttonLabel: 'Get Publishing Essentials',
+        id: 'bundle-individual-kits',
+        badge: 'Targeted solutions',
+        name: 'Individual Kits',
+        tagline: '"Targeted solutions for specific hurdles."',
+        description: 'The Self-Publishing Flow or Marketing Flow Kit — pick the one that matches where you are right now.',
+        includes: [
+            'Self-Publishing Flow — $97',
+            'Marketing & AEO Kit — $97',
+            'Includes the 2026 Answer Engine Optimization (AEO) Setup',
+            'Stop competing for keywords; start becoming the Answer',
+            'Buy individually or both',
+        ],
+        price: '$97 each',
+        stripe: null,
+        buttonLabel: 'See all kits above',
         featured: false,
     },
     {
         id: 'bundle-full-journey',
         badge: 'Best value',
-        name: 'Full Author Journey',
-        description: 'Follow a single guided path from first idea to long-tail book sales.',
-        includes: ['Author AI Toolkit', 'Editing Workflow', 'Self-Publishing Flow', 'Marketing Flow Kit'],
-        price: 'Set best value price',
-        buttonLabel: 'Get Full Journey Bundle',
+        name: 'The Full Author Journey Bundle',
+        tagline: 'Save over $140',
+        description: 'The complete manuscript-to-market map. One purchase. Every tool from first draft to long-tail sales.',
+        includes: [
+            'The AI Toolkit: Ethical prompt engineering for faster drafting.',
+            'The Editing Flow: The 4-dimensional logic of a specialised editor.',
+            'The Self-Publishing Flow: Tech-proof distribution & ISBN strategy.',
+            'The Marketing & AEO Kit: 6-month launch plan + Full AEO Blueprint.',
+            'Bonus: Lifetime access to all future workflow updates.',
+        ],
+        price: '$197',
+        stripe: 'full-journey',
+        buttonLabel: 'Get the Full Journey Bundle — $197',
         featured: true,
     },
 ];
+
 
 const FAQS = [
     {
@@ -160,6 +185,22 @@ function scrollTo(id) {
 
 export default function AuthorWorkflows() {
     const [openFaq, setOpenFaq] = useState(null);
+    const [loadingBundle, setLoadingBundle] = useState(null);
+
+    const handleBuy = async (tier) => {
+        if (!tier) { scrollTo('workflow-grid'); return; }
+        setLoadingBundle(tier);
+        try {
+            const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ tier }),
+            });
+            const data = await res.json();
+            if (data.url) { window.location.href = data.url; }
+            else { alert('Something went wrong. Please try again.'); setLoadingBundle(null); }
+        } catch { alert('Something went wrong. Please try again.'); setLoadingBundle(null); }
+    };
 
     return (
         <main style={{ background: '#0d0b09' }}>
@@ -329,12 +370,15 @@ export default function AuthorWorkflows() {
                                 className={`${styles.pricingCard} ${bundle.featured ? styles.pricingCardFeatured : ''}`}
                             >
                                 {bundle.featured && (
-                                    <div className={styles.pricingFeaturedBadge}>Best value</div>
+                                    <div className={styles.pricingFeaturedBadge}>Best Value — Save over $140</div>
                                 )}
                                 {!bundle.featured && (
                                     <div className={styles.pricingBadge}>{bundle.badge}</div>
                                 )}
                                 <h3 className={styles.pricingName}>{bundle.name}</h3>
+                                {bundle.tagline && (
+                                    <p style={{ fontStyle: 'italic', color: 'var(--gold)', fontSize: '0.88rem', marginBottom: '0.75rem' }}>{bundle.tagline}</p>
+                                )}
                                 <p className={styles.pricingDesc}>{bundle.description}</p>
                                 <ul className={styles.pricingIncludes}>
                                     {bundle.includes.map((item, i) => (
@@ -342,7 +386,13 @@ export default function AuthorWorkflows() {
                                     ))}
                                 </ul>
                                 <div className={styles.pricingPrice}>{bundle.price}</div>
-                                <button className={styles.pricingCta}>{bundle.buttonLabel}</button>
+                                <button
+                                    className={styles.pricingCta}
+                                    onClick={() => handleBuy(bundle.stripe)}
+                                    disabled={loadingBundle === bundle.stripe}
+                                >
+                                    {loadingBundle === bundle.stripe ? 'Redirecting…' : bundle.buttonLabel}
+                                </button>
                             </div>
                         ))}
                     </div>

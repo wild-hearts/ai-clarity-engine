@@ -144,10 +144,10 @@ export default function AIToolkitPage() {
                         <ul className={styles.buyIncludes}>
                             {WHATS_INSIDE.map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
-                        <div className={styles.buyPrice}>$39 <span style={{ fontSize: '1rem', fontFamily: 'Inter', fontWeight: 400, color: 'rgba(245,240,232,0.4)' }}>AUD</span></div>
+                        <div className={styles.buyPrice}>$47 <span style={{ fontSize: '1rem', fontFamily: 'Inter', fontWeight: 400, color: 'rgba(245,240,232,0.4)' }}>AUD</span></div>
                         <p className={styles.buyPriceSub}>One-time payment · No subscription</p>
                         <button className={styles.buyBtn} onClick={handleBuy} disabled={loading}>
-                            {loading ? 'Redirecting to checkout…' : 'Buy now — $39 AUD'}
+                            {loading ? 'Redirecting to checkout…' : 'Buy now — $47 AUD'}
                         </button>
                         <p className={styles.buyGuarantee}>Secure checkout via Stripe · Instant download after payment</p>
                     </div>
